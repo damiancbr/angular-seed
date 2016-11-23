@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="lesson1App">
+ <head>
+ <title>Creacion de Objectos Con JavaScript</title>
+ <script src="../../js/lesson1App.js"></script>
+ <script>
+ function myFunction() {
+ console.log(document.getElementById("objectA").innerText);
+ document.getElementById("objectA").innerHTML = "Nombre: " +persona1.nombre + " " + persona1.ape1 + " Edad:" + persona1.edad;
+document.getElementById("objectAB").innerHTML = persona1.getNombreCompleto();
+ document.getElementById("objectB").innerHTML = "Nombre: " +persona2.nombre + " " + persona2.ape1 + " Edad:" + persona2.edad;
+document.getElementById("objectBB").innerHTML = persona2.getNombreCompleto();
+ document.getElementById("objectC").innerHTML = "Nombre: " +persona3.nombre + " " + persona3.ape1 + " Edad:" + persona3.edad;
+ document.getElementById("objectCB").innerHTML = persona3.getNombreCompleto();
+ }
+ </script>
+ </head>
+ <body>
+ <div id="objectA"></div>
+ <div id="objectAB"></div>
+ <div id="objectB"></div>
+ <div id="objectBB"></div>
+ <div id="objectC"></div>
+ <div id="objectCB"></div>
+<p id="demo" onclick="myFunction()" style="cursor: pointer">Dar clic 
