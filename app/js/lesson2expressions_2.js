@@ -1,0 +1,1 @@
+var lesson2App = angular.module("lesson2App", []);

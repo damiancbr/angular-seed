@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="lesson2App">
+ <head>
+ <title>
+ Lesson 2 - Practice
+ </title>
+ <meta charset="utf-8" />
+ <script src="../../lib/angular.min.js"></script>
+ <script src="../../js/lesson2databinding_1.js"></script>
+ </head>
+ <body ng-controller="indexController">
+	 <h1>
+	 Lesson 2 - Practice 1 - Data Binding
+	 </h1>
+	 <div ng-view>
+		 <div id="messageTitle"></div>
+		 <div id="message">{{message}}</div>
+	 </div>
+
+	 <div >
+		 <div id="messageTitle"></div>
+		 <div id="message">Sin ng-view: {{message}}</div>
+	 </div>
+ </body>
+</html>
