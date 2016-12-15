@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>
+ Lesson 2 - Practice
+ </title>
+ <meta charset="utf-8" />
+ <script src="../../lib/angular.min.js"></script>
+ <script src="../../js/crud.js"></script>
+ <script src="../../js/servicioCrud.js"></script>
+ <script src="../../js/crudFilter.js"></script>
+ <script src="../../js/myDirective.js"></script>
+ <script src="../../bower_components/jquery/dist/jquery.js"></script>
+ <style>
+ 	.errorClass	{
+ 		color: red;
+ 	}
+ 	
+ 	.gridStyle {
+	    border: 1px solid rgb(212,212,212);
+	    width: 400px; 
+	    height: 300px
+	}
+ </style>
+ </head>
+ <body ng-app="myApp" ng-controller="myCtrl as varScope">
+ <form name="varScope.infoForm">
+ <h1>
+ {{varScope.valorDeServicioValue}}
+ </h1>
+ <div>
+	 <input type="button" value="Agregar" ng-click="varScope.mostrarAgregar()" />
+	 </br>	
+	 <div ng-show="varScope.mostrar">
+		 Producto: <input type="input" ng-model="varScope.caja.nombre">	 
+		 Tamaño: <input type="input"   ng-model="varScope.caja.tamanio">
+		 Cantidad: <input type="input" ng-model="varScope.caja.cantidad">
+		 Tienda: <input type="input"   ng-model="varScope.caja.tienda">
+
+		 <input type="button" value="Guardar" ng-click="varScope.AgregaItem(varScope.caja)"/>
+		 <input type="button" value="Guardar por POST" ng-click="varScope.AgregaItemPost(varScope.caja)"/>
+		 <input type="button" value="Actualizar por POST" ng-click="varScope.ActualizaItemPost(varScope.caja)"/>
+	 </div>
+	 <!--span ng-show="varScope.showError(varScope.infoForm.nombre, 'required')">El nombre es requerido</span-->
+
+	Cantidad: {{varScope.productos.length}}
+
+	Buscar<input type="input" value="Agregar" ng-model="buscar.nombre" />
+	 <input type="button" value="Ordenar" ng-click="ordenar()"	>
+<!--table>
+<tr>
+<br/>
+	 
+	 <br/>
+<td>Producto</td>
+<td>Tamaño</td>
+<td>Cantidad</td>
+<td>Tienda</td>
+</tr>
+  <tr ng-repeat="producto in varScope.productos | filter:buscar ">
+    <td>{{ producto.nombre }}</td>
+    <td>{{ producto.tamanio }}</td>
+    <td>{{ producto.cantidad }}</td>
+    <td>{{ producto.tienda }}</td>
+    <td><input type="button" value="Eliminar" ng-click="varScope.EliminarItem(producto)"/></td>
+  </tr>
+</table-->
+<!--
+Segunda tabla
+<table>
+<tr>
+<td>Producto</td>
+<td>Tamaño</td>
+<td>Cantidad</td>
+<td>Tienda</td>
+</tr>
+  <tr ng-repeat="producto in varScope.productos | filterOrder:'nombre'">
+    <td>{{ producto.nombre }}</td>
+    <td>{{ producto.tamanio }}</td>
+    <td>{{ producto.cantidad }}</td>
+    <td>{{ producto.tienda }}</td>
+    <td><input type="button" value="Eliminar" ng-click="varScope.EliminarItem(producto)"/></td>
+  </tr>
+</table-->
+<!--
+Tercera tabla
+<br/>
+
+<br/>
+<div ng-repeat="producto in varScope.productos" >	
+	{{ producto.nombre }} / {{ producto.tamanio }} / {{ producto.cantidad }} / {{ producto.tienda }}
+</div>
+  
+</div>
+Aqui la directiva:
+<div ng-repeat="producto in varScope.productos" >	
+	<ventas-div></ventas-div>
+</div>
+<br/><br/>
+------------
+-->
+<input type="button" value="Obtener REST" ng-click="varScope.CargarRest()" />
+<!--{{varScope.mensaje}}-->
+<table>
+<tr>
+<td>Producto</td>
+<td>Tamaño</td>
+<td>Cantidad</td>
+<td>Tienda</td>
+</tr>
+  <tr ng-repeat="producto in varScope.productos | filterOrder:'nombre'">
+    <td>{{ producto.producto }}</td>
+    <td>{{ producto.tamano }}</td>
+    <td>{{ producto.cantidad }}</td>
+    <td>{{ producto.tienda }}</td>
+    <td>{{ producto.precio }}</td>
+    <td><input type="button" value="Eliminar" ng-click="varScope.EliminarItem(producto)"/></td>
+    <td><input type="button" value="Editar" ng-click="varScope.EditarItem(producto)"/></td>
+  </tr>
+</table>
+ </div>
+ </form>
+ </body>
+</html>

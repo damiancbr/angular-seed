@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>
+		Lesson 7 - Practice
+		</title>
+		<meta charset="utf-8" />
+		<script src="js/angular/angular.js"></script>		
+		<script src="js/app/config/app.js"></script>
+		<script src="js/app/controller/lesson71.controller.js"></script>
+	</head>
+	<body ng-controller="PruebaController">
+		<input type="checkbox" ng-model="showNombre">¿Mostrar nombre?
+		<br>
+		<div ng-if="showNombre">
+			Nombre: <input ng-model="nombre" >
+			<br>
+			El valor de "nombre" en el $scope del "ng-if" es : {{nombre}}
+		</div>
+		El valor de "nombre" en el $scope del "Controlador" es : <strong>{{nombre}}</strong>
+		<hr>
+		<input type="checkbox" ng-model="modelo.showApellido">¿Mostrar apellido?
+		<br>
+		Apellido: <input ng-model="modelo.apellido" >
+		<div ng-if="modelo.showApellido">
+		
+		El valor de "apellido" en el $scope del "ng-if" es : {{modelo.apellido}}
+		</div>
+		<br>
+		El valor de "apellido" en el $scope del "Controlador" es : {{modelo.apellido}}
+	</body>
+</html>

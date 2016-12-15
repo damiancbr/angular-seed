@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="lesson62">
+<head>
+<title>
+Lesson 6 - Practice
+</title>
+<meta charset="utf-8" />
+<script src="js/angular/angular.js"></script>
+<script src="js/app/config/app.js"></script>
+<script src="js/app/controllers/lesson62.controller.js"></script>
+</head>
+<body ng-controller="lesson62Ctrl">
+<h3 ng-bind="appTitle"></h3>
+<label>Buscar: <input ng-model="searchText"></label>
+	<table id="searchTextResults">
+		<tr><th>Nombre</th><th>Telefono</th></tr>
+		<tr ng-repeat="contacto in contactos | filter:searchText">
+		<td>{{contacto.nombre}}</td>
+		<td>{{contacto.telefono}}</td>
+		</tr>
+	</table>
+	<hr>
+	<label>Todo: <input ng-model="search"></label> <br>
+	<label>Solo Nombre <input ng-model="search.nombre"></label><br>
+	<label>Solo Telefono <input ng-model="search.telefono"></label><br>
+	<table>
+		<tr><th>Nombre</th><th>Telefono</th></tr>
+		<tr ng-repeat="contacto in contactos | filter:search">
+		<td>{{contacto.nombre}}</td>
+		<td>{{contacto.telefono}}</td>
+		</tr>
+	</table>
+</body>
+</html>

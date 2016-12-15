@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>
+ Lesson 2 - Practice
+ </title>
+ <meta charset="utf-8" />
+ <script src="../../lib/angular.min.js"></script>
+ <script src="../../js/lesson2directive_2.js"></script>
+ </head>
+ <body>
+ <h1>
+ Lesson 2 - Practice 7 - Directive
+ </h1>
+	 <div ng-app="myApp" ng-controller="myCtrl">
+	 <p>Use directives ng-init, ng-repeat</p>
+	 <!--div ng-init="students = [
+	 {id:0, name:'Paul', age:12},
+	 {id:1,name:'Carlos', age:13},
+	 {id:2,name:'Jan', age:14},
+	 {id:3,name:'Ana', age:15},
+	 {id:4,name:'Victor', age:16}]"-->
+	 <p>List</p>
+	 <ul>
+	 <!-- REPEATER! -->
+	 <li ng-repeat="student in students">{{student.name}}: {{student.age}} years</li>
+ </ul>
+ </div>
+ </body>
+</html>

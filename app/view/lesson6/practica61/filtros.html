@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="lesson61">
+<head>
+<title>
+Lesson 6 - Practice
+</title>
+<meta charset="utf-8" />
+	<script src="js/angular/angular.js"></script>
+	<script src="js/app/config/app.js"></script>
+	<script src="js/app/controllers/lesson61.controller.js"></script>
+</head>
+<body ng-controller="lesson61Ctrl">
+	<h3 ng-bind="appTitle"></h3>
+	<div >
+		<p>My first filter:</p>
+		<p>{{ 5 | currency}}</p>
+		<p>My first filter (date): {{ 18-11-2016 | date:'MMMM dd/MM/yyyy HH:mm:ss' }}</p>
+		<p>My first filter (json): {{ cars}}</p>
+		<p>My first filter (limitTo): {{ 12345678912345678 | limitTo:10 }}</p>
+		<p>My first filter (lowercase): {{ mensaje | lowercase }}</p>
+		<p>My first filter (uppercase): {{ mensaje | uppercase }}</p>
+	</div>
+</body>
+</html>
